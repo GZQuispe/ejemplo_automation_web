@@ -13,11 +13,11 @@ public class BlazeDemo_Login extends WebComponent {
     private HashMap<claves, By> loginPageMap = new HashMap();
 
     public enum claves {
-        registerButton("homeMessage"),
-        emailField("homeMessage"),
-        passwordField("homeMessage"),
-        loginAnchor("homeButton"),
-        loginButton("homeButton");
+        registerButton("registerButton"),
+        emailField("emailField"),
+        passwordField("passwordField"),
+        loginAnchor("loginAnchor"),
+        loginButton("loginButton");
 
         private String clave;
 
@@ -34,8 +34,15 @@ public class BlazeDemo_Login extends WebComponent {
 
     public BlazeDemo_Login()
     {
-        homePageMap.put(BlazeDemo_HomePage.claves.homeMessage, homeMessage);
-        homePageMap.put(BlazeDemo_HomePage.claves.homeButton, homeButton);
+        loginPageMap.put(claves.registerButton, registerButton);
+        loginPageMap.put(claves.emailField, emailField);
+        loginPageMap.put(claves.passwordField, passwordField);
+        loginPageMap.put(claves.loginAnchor, loginAnchor);
+        loginPageMap.put(claves.loginButton, loginButton);
+    }
+
+    public By getLoginPageMap(claves clave) {
+        return loginPageMap.get(clave);
     }
 
     public WebElement getRegisterButton()

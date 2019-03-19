@@ -5,11 +5,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.HashMap;
+
 public class BlazeDemo_Register extends WebComponent {
 
+    private HashMap<claves, By> loginPageMap = new HashMap();
+
     public enum claves {
-        homeMessage("homeMessage"),
-        homeButton("homeButton");
+        nameField("nameField"),
+        companyField("emailField"),
+        emailField("emailField"),
+        passwordField("passwordField"),
+        confirmPasswordField("confirmPasswordField"),
+        registerButton("registerButton"),
+        registerAnchor("registerAnchor");
 
         private String clave;
 
@@ -18,6 +27,20 @@ public class BlazeDemo_Register extends WebComponent {
         }
     }
 
+    public BlazeDemo_Register()
+    {
+        loginPageMap.put(claves.nameField, nameField);
+        loginPageMap.put(claves.companyField, companyField);
+        loginPageMap.put(claves.emailField, emailField);
+        loginPageMap.put(claves.passwordField, passwordField);
+        loginPageMap.put(claves.confirmPasswordField, confirmPasswordField);
+        loginPageMap.put(claves.registerButton, registerButton);
+        loginPageMap.put(claves.registerAnchor, registerAnchor);
+    }
+
+    public By getRegisterPageMap(claves clave) {
+        return loginPageMap.get(clave);
+    }
 
     By nameField = By.id("name");
     By companyField = By.id("company");

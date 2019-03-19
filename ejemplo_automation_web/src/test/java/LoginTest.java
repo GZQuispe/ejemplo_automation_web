@@ -105,6 +105,6 @@ public class LoginTest extends BaseTest {
 
     public void validateHomeMessage(BlazeDemo_HomePage homePage) {
         Assert.assertTrue(homePage.isDisplayed(homePage.getHomePageMap(BlazeDemo_HomePage.claves.homeMessage)));
-        Assert.assertEquals(homePage.getHomeMessage(), "Welcome to the Simple Travel Agency!");
+        Assert.assertEquals(homePage.getHomeMessage().getText(), "Welcome to the Simple Travel Agency!");
     }
 }
