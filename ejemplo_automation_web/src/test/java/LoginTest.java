@@ -28,7 +28,7 @@ public class LoginTest extends BaseTest {
 
 
 
-        /*----------------HOME-PAGE--------------*/
+        /*******************HOME-PAGE*******************/
 
         BlazeDemo_HomePage homePage = new BlazeDemo_HomePage();
 
@@ -36,7 +36,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(homePage.getHomeMessage(), "Welcome to the Simple Travel Agency!");
         homePage.clickHomeButton();
 
-        /*----------------LOGIN-PAGE--------------*/
+        /*****************LOGIN-PAGE****************/
 
         BlazeDemo_Login loginPage = new BlazeDemo_Login();
 
@@ -44,7 +44,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(loginPage.getLoginAnchor().getText(), "Login");
         loginPage.clickRegisterButton();
 
-        /*----------------REGISTER-PAGE--------------*/
+        /**************REGISTER-PAGE*************/
 
         BlazeDemo_Register registerPage = new BlazeDemo_Register();
 
@@ -53,14 +53,14 @@ public class LoginTest extends BaseTest {
         registerPage.registerToBlazeDemo("Usuario", "compania", "usuario@server.com", "123123", "123123");
         registerPage.clickRegisterButton();
 
-        /*---------------BACK-TO-LOGIN-PAGE--------------*/
+        /*****************BACK-TO-LOGIN-PAGE**************/
 
         Assert.assertTrue(loginPage.IsDisplayed(loginPage.loginAnchor));
         Assert.assertEquals(loginPage.getLoginAnchor().getText(), "Login");
         loginPage.loginToBlazeDemo("usuario@server.com","123123");
         loginPage.clickLoginButton();
 
-        /*----------------LOGIN-SUCCESS-PAGE--------------*/
+        /******************LOGIN-SUCCESS-PAGE*******************/
 
         BlazeDemo_LoginSuccess loginSuccessPage = new BlazeDemo_LoginSuccess();
 

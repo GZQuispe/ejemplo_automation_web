@@ -15,7 +15,7 @@ public class BlazeDemo_HomePage extends WebComponent {
     private By originChoose = By.xpath("//select[@name = 'fromPort']");
     private By destineChoose = By.xpath("//select[@name = 'toPort']");
     private By btnFindFlights = By.xpath("//body//input[@value='Find Flights']");
-    public By homeMessage = By.xpath("//h1[contains(text(),'Welcome to the Simple Travel Agency!')]");
+    public By homeMessage = By.xpath("//h1");
     private By homeButton = By.xpath("//div[@class='navbar navbar-inverse']//a[@href='home']");
 
     public BlazeDemo_HomePage()
