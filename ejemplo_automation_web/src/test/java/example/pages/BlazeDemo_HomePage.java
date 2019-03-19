@@ -10,17 +10,38 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
+import java.util.HashMap;
+
 public class BlazeDemo_HomePage extends WebComponent {
+
+    public enum claves {
+        homeMessage("homeMessage"),
+        homeButton("homeButton");
+
+        private String clave;
+
+        claves(String clave) {
+            this.clave = clave;
+        }
+    }
 
     private By originChoose = By.xpath("//select[@name = 'fromPort']");
     private By destineChoose = By.xpath("//select[@name = 'toPort']");
     private By btnFindFlights = By.xpath("//body//input[@value='Find Flights']");
-    public By homeMessage = By.xpath("//h1");
+    private By homeMessage = By.xpath("//h1");
     private By homeButton = By.xpath("//div[@class='navbar navbar-inverse']//a[@href='home']");
+
+    private HashMap<claves, By> homePageMap = new HashMap();
 
     public BlazeDemo_HomePage()
     {
        getDriver().get("http://blazedemo.com/");
+       homePageMap.put(claves.homeMessage, homeMessage);
+       homePageMap.put(claves.homeButton, homeButton);
+    }
+
+    public By getHomePageMap(claves clave) {
+        return homePageMap.get(clave);
     }
 
     public WebElement getHomeMessage()
@@ -38,9 +59,9 @@ public class BlazeDemo_HomePage extends WebComponent {
     }
 
 
-    public void clickHomeButton()
+    public WebElement getHomeButton()
     {
-         getDriver().findElement(homeButton).click();
+         return getDriver().findElement(homeButton);
     }
 
     /**
