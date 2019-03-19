@@ -11,7 +11,7 @@ public class BlazeDemo_Login extends WebComponent {
     By registerButton = By.xpath("//*[contains(text(),'Register')]");
     By emailField = By.id("email");
     By passwordField = By.id("password");
-    public By loginAnchor = By.xpath("//div[contains(text(),'Login')]");
+    public By loginAnchor = By.xpath("//div[@class = 'panel-heading']");
 
     public void clickRegisterButton()
     {

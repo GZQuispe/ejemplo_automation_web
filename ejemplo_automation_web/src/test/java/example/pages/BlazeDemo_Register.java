@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
 public class BlazeDemo_Register extends WebComponent {
 
     By nameField = By.id("name");
@@ -14,7 +13,7 @@ public class BlazeDemo_Register extends WebComponent {
     By passwordField = By.id("password");
     By confirmPasswordField = By.id("password-confirm");
     By registerButton = By.xpath("//button[text()[contains(.,'Register')]]");
-    public By registerAnchor = By.xpath("//div[@class='panel-heading'][contains(text(), 'Register')]");
+    public By registerAnchor = By.xpath("//div[@class='panel-heading']");
 
     public void setName(String name)
     {
