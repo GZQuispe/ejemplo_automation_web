@@ -38,9 +38,9 @@ public class BlazeDemo_Login extends WebComponent {
         homePageMap.put(BlazeDemo_HomePage.claves.homeButton, homeButton);
     }
 
-    public void clickRegisterButton()
+    public WebElement getRegisterButton()
     {
-        getDriver().findElement(registerButton).click();
+        return getDriver().findElement(registerButton);
     }
 
     private void setEmail(String email)
@@ -53,9 +53,9 @@ public class BlazeDemo_Login extends WebComponent {
         getDriver().findElement(passwordField).sendKeys(password);
     }
 
-    public void clickLoginButton()
+    public WebElement getLoginButton()
     {
-        getDriver().findElement(loginButton).click();
+        return getDriver().findElement(loginButton);
     }
 
     public WebElement getLoginAnchor (){
