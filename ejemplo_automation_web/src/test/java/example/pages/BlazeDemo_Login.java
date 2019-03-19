@@ -5,12 +5,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.HashMap;
+
 
 public class BlazeDemo_Login extends WebComponent {
 
+    private HashMap<claves, By> loginPageMap = new HashMap();
+
     public enum claves {
         registerButton("homeMessage"),
-        homeButton("homeButton");
+        emailField("homeMessage"),
+        passwordField("homeMessage"),
+        loginAnchor("homeButton"),
+        loginButton("homeButton");
 
         private String clave;
 
@@ -23,7 +30,13 @@ public class BlazeDemo_Login extends WebComponent {
     By emailField = By.id("email");
     By passwordField = By.id("password");
     By loginButton = By.xpath("//button[contains(text(),'Login')]");
-    public By loginAnchor = By.xpath("//div[@class = 'panel-heading']");
+    By loginAnchor = By.xpath("//div[@class = 'panel-heading']");
+
+    public BlazeDemo_Login()
+    {
+        homePageMap.put(BlazeDemo_HomePage.claves.homeMessage, homeMessage);
+        homePageMap.put(BlazeDemo_HomePage.claves.homeButton, homeButton);
+    }
 
     public void clickRegisterButton()
     {
