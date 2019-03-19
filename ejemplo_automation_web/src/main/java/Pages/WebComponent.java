@@ -199,7 +199,7 @@ public class WebComponent {
         }
     }
 
-    public boolean IsDisplayed(By by)
+    public boolean isDisplayed(By by)
     {
         return waitForSelectableElement(by, 20, false);
     }

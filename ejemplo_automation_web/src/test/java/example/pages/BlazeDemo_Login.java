@@ -8,9 +8,21 @@ import org.openqa.selenium.WebElement;
 
 public class BlazeDemo_Login extends WebComponent {
 
+    public enum claves {
+        registerButton("homeMessage"),
+        homeButton("homeButton");
+
+        private String clave;
+
+        claves(String clave) {
+            this.clave = clave;
+        }
+    }
+
     By registerButton = By.xpath("//*[contains(text(),'Register')]");
     By emailField = By.id("email");
     By passwordField = By.id("password");
+    By loginButton = By.xpath("//button[contains(text(),'Login')]");
     public By loginAnchor = By.xpath("//div[@class = 'panel-heading']");
 
     public void clickRegisterButton()
@@ -30,7 +42,7 @@ public class BlazeDemo_Login extends WebComponent {
 
     public void clickLoginButton()
     {
-        getDriver().findElement(By.xpath("//button[contains(text(),'Login')]")).click();
+        getDriver().findElement(loginButton).click();
     }
 
     public WebElement getLoginAnchor (){
