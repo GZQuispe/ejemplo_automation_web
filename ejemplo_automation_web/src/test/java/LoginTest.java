@@ -31,14 +31,14 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(homePage.isDisplayed(homePage.getHomePageMap(BlazeDemo_HomePage.claves.homeMessage)));
         Assert.assertEquals(homePage.getHomeMessage(), "Welcome to the Simple Travel Agency!");
 
-        Assert.assertTrue(homePage.isDisplayed(homePage.));
+        Assert.assertTrue(homePage.isDisplayed(homePage.getHomePageMap(BlazeDemo_HomePage.claves.homeButton)));
         homePage.getHomeButton().click();
 
         /*****************LOGIN-PAGE****************/
 
         BlazeDemo_Login loginPage = new BlazeDemo_Login();
 
-        Assert.assertTrue(loginPage.isDisplayed(loginPage.loginAnchor));
+        Assert.assertTrue(loginPage.isDisplayed(loginPage.getLoginPageMap(BlazeDemo_Login.claves.loginAnchor)));
         Assert.assertEquals(loginPage.getLoginAnchor().getText(), "Login");
         loginPage.clickRegisterButton();
 
@@ -46,14 +46,14 @@ public class LoginTest extends BaseTest {
 
         BlazeDemo_Register registerPage = new BlazeDemo_Register();
 
-        Assert.assertTrue(registerPage.isDisplayed(registerPage.registerAnchor));
+        Assert.assertTrue(registerPage.isDisplayed(registerPage.getRegisterPageMap(BlazeDemo_Register.claves.registerAnchor)));
         Assert.assertEquals(registerPage.getRegisterAnchor(),"Register");
         registerPage.registerToBlazeDemo("Usuario", "compania", "usuario@server.com", "123123", "123123");
         registerPage.clickRegisterButton();
 
         /*****************BACK-TO-LOGIN-PAGE**************/
 
-        Assert.assertTrue(loginPage.isDisplayed(loginPage.loginAnchor));
+        Assert.assertTrue(loginPage.isDisplayed(loginPage.getLoginPageMap(BlazeDemo_Login.claves.loginAnchor)));
         Assert.assertEquals(loginPage.getLoginAnchor().getText(), "Login");
         loginPage.loginToBlazeDemo("usuario@server.com","123123");
         loginPage.clickLoginButton();
@@ -62,7 +62,7 @@ public class LoginTest extends BaseTest {
 
         BlazeDemo_LoginSuccess loginSuccessPage = new BlazeDemo_LoginSuccess();
 
-        Assert.assertTrue(loginSuccessPage.isDisplayed(loginSuccessPage.successMessage));
+        Assert.assertTrue(loginSuccessPage.isDisplayed(loginSuccessPage.getLoginSuccessPageMap(BlazeDemo_LoginSuccess.claves.successMessage)));
         Assert.assertEquals(loginSuccessPage.getSuccessMessage().getText(), "You are logged in!");
     }
 }
