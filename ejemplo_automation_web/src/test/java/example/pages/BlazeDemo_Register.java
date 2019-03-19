@@ -7,6 +7,18 @@ import org.openqa.selenium.WebElement;
 
 public class BlazeDemo_Register extends WebComponent {
 
+    public enum claves {
+        homeMessage("homeMessage"),
+        homeButton("homeButton");
+
+        private String clave;
+
+        claves(String clave) {
+            this.clave = clave;
+        }
+    }
+
+
     By nameField = By.id("name");
     By companyField = By.id("company");
     By emailField = By.id("email");
@@ -44,9 +56,9 @@ public class BlazeDemo_Register extends WebComponent {
         setConfirmPasswordField(confirmPassword);
     }
 
-    public void clickRegisterButton()
+    public WebElement getRegisterButton()
     {
-        getDriver().findElement(registerButton).click();
+        return getDriver().findElement(registerButton);
     }
 
     public String getRegisterAnchor()
