@@ -1,6 +1,7 @@
 package example.steps;
 
 import example.pages.BlazeDemo_Login;
+import io.qameta.allure.Step;
 import org.junit.Assert;
 
 public class BlazeDemo_LoginSteps {
@@ -14,17 +15,21 @@ public class BlazeDemo_LoginSteps {
         loginPage.getRegisterButton().click();
     }
 
+
+    @Step("Validate Login Message")
     public void validateLoginMessage() {
         Assert.assertTrue(loginPage.isDisplayed(loginPage.getLoginPageMap(BlazeDemo_Login.claves.loginAnchor)));
         Assert.assertEquals( "Login",loginPage.getLoginAnchor().getText());
     }
 
+    @Step("Validate Register Input")
+    public void validateLoginInput() {
+        loginPage.loginToBlazeDemo("usuario@server.com","123123");
+    }
+
+    @Step("Validate Login Button")
     public void clickLoginButton() {
         Assert.assertTrue(loginPage.isDisplayed(loginPage.getLoginPageMap(BlazeDemo_Login.claves.loginButton)));
         loginPage.getLoginButton().click();
-    }
-
-    public void validateLoginInput() {
-        loginPage.loginToBlazeDemo("usuario@server.com","123123");
     }
 }
