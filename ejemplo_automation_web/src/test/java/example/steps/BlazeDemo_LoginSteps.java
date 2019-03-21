@@ -10,11 +10,11 @@ public class BlazeDemo_LoginSteps {
 
     public BlazeDemo_LoginSteps(){loginPage = new BlazeDemo_Login();}
 
+    @Step ("Validate Register Button")
     public void clickLoginRegisterButton() {
         Assert.assertTrue(loginPage.isDisplayed(loginPage.getLoginPageMap(BlazeDemo_Login.claves.registerButton)));
         loginPage.getRegisterButton().click();
     }
-
 
     @Step("Validate Login Message")
     public void validateLoginMessage() {
@@ -31,5 +31,18 @@ public class BlazeDemo_LoginSteps {
     public void clickLoginButton() {
         Assert.assertTrue(loginPage.isDisplayed(loginPage.getLoginPageMap(BlazeDemo_Login.claves.loginButton)));
         loginPage.getLoginButton().click();
+    }
+
+    @Step("Validate Login->Register Button")
+    public void ValidateLoginRegisterButton(){
+        validateLoginMessage();
+        clickLoginRegisterButton();
+    }
+
+    @Step("Validate Login")
+    public void validateLogin(){
+        validateLoginMessage();
+        validateLoginInput();
+        clickLoginButton();
     }
 }

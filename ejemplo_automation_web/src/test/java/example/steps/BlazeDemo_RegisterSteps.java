@@ -28,4 +28,11 @@ public class BlazeDemo_RegisterSteps {
         Assert.assertTrue(registerPage.isDisplayed(registerPage.getRegisterPageMap(BlazeDemo_Register.claves.registerAnchor)));
         Assert.assertEquals("Register",registerPage.getRegisterAnchor());
     }
+
+    @Step("Validate Registration")
+    public void validateRegistration(){
+        validateRegisterMessage();
+        validateRegisterInput();
+        clickRegisterButton();
+    }
 }

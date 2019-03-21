@@ -40,15 +40,6 @@ public class BlazeDemo_HomeSteps {
         Assert.assertNotNull("Couldn't find selected origin", homePage.originOption(origin));
         homePage.originOption(origin).click();
     }
-    public void clickHomeButton() {
-        Assert.assertTrue(homePage.isDisplayed(homePage.getHomePageMap(BlazeDemo_HomePage.claves.homeButton)));
-        homePage.getHomeButton().click();
-    }
-
-    public void validateHomeMessage() {
-        Assert.assertTrue(homePage.isDisplayed(homePage.getHomePageMap(BlazeDemo_HomePage.claves.homeMessage)));
-        Assert.assertEquals("Welcome to the Simple Travel Agency!",homePage.getHomeMessage().getText());
-    }
 
     @Step("Validate Home Click Button")
     public void clickHomeButton() {
@@ -62,4 +53,9 @@ public class BlazeDemo_HomeSteps {
         Assert.assertEquals("Welcome to the Simple Travel Agency!",homePage.getHomeMessage().getText());
     }
 
+    @Step("Validate Home")
+    public void validateHome(){
+        validateHomeMessage();
+        clickHomeButton();
+    }
 }

@@ -32,29 +32,23 @@ public class LoginTest extends BaseTest {
 
         BlazeDemo_HomeSteps homeSteps = new BlazeDemo_HomeSteps();
 
-        homeSteps.validateHomeMessage();
-        homeSteps.clickHomeButton();
+        homeSteps.validateHome();
 
         /*****************LOGIN-PAGE****************/
 
         BlazeDemo_LoginSteps loginSteps = new BlazeDemo_LoginSteps();
 
-        loginSteps.validateLoginMessage();
-        loginSteps.clickLoginRegisterButton();
+        loginSteps.ValidateLoginRegisterButton();
 
         /**************REGISTER-PAGE*************/
 
         BlazeDemo_RegisterSteps registerPage = new BlazeDemo_RegisterSteps();
 
-        registerPage.validateRegisterMessage();
-        registerPage.validateRegisterInput();
-        registerPage.clickRegisterButton();
+        registerPage.validateRegistration();
 
         /*****************BACK-TO-LOGIN-PAGE**************/
 
-        loginSteps.validateLoginMessage();
-        loginSteps.validateLoginInput();
-        loginSteps.clickLoginButton();
+        loginSteps.validateLogin();
 
         /******************LOGIN-SUCCESS-PAGE*******************/
 
